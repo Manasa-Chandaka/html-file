@@ -1,0 +1,48 @@
+//calculator.js
+export const add=(a,b)=> a+b;
+export const subtract=(a,b)=>a-b;
+export const multiply=(a,b)=>a*b;
+export const divide=(a,b)=>{
+    if(b==0){
+        return "cannot divide by zero";
+    }
+    return a/b;
+};
+export const modulus=(a,b)=>a%b;
+export const addMany = (...numbers) => { return numbers.reduce((total, num) => total + num, 0); };
+
+
+//main.js
+import{
+    add,
+    subtract,
+    multiply,
+    divide,
+    modulus,
+    addMany,
+} from './calculator.js';
+console.log("Addition: ",add(30,20));
+console.log("subtraction: ",subtract(30,20));
+console.log("multiplication: ",multiply(30,20));
+console.log("Division: ",divide(20,5));
+console.log("Modulus: ",modulus(10,3));
+const numbers=[10,20,30,40,50];
+console.log("Add many:",addMany(...numbers));
+
+//index.html
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Calculator</title>
+</head>
+<body>
+
+    <h1>JavaScript Calculator</h1>
+
+    <script type="module" src="main.js"></script>
+
+</body>
+</html>
